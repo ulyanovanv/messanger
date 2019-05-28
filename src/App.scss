@@ -1,0 +1,29 @@
+$light-grey: #fafafa;
+
+.App {
+  &__contacts {
+    border-right: 1px solid $light-grey;
+
+    &_list {
+      height:100vh;
+    }
+
+    &_item {
+      height: 70px;
+
+      &:hover {
+        background-color: $light-grey;
+      }
+    }
+  }
+
+  &__charts {
+    border-left: 1px solid $light-grey;
+  }
+
+  &__new-chart {
+    border-left: 1px solid $light-grey;
+  }
+}
+
+@import "~bootstrap/scss/bootstrap";
