@@ -3,13 +3,20 @@ $light-grey: #fafafa;
 .App {
   &__contacts {
     border-right: 1px solid $light-grey;
+    height:100vh;
 
     &_list {
-      height:100vh;
+      overflow-y: auto;
     }
 
     &_item {
-      height: 70px;
+      height:100px;
+
+      img {
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+      }
 
       &:hover {
         background-color: $light-grey;
@@ -19,10 +26,33 @@ $light-grey: #fafafa;
 
   &__charts {
     border-left: 1px solid $light-grey;
+    height:100vh;
+
+    &_contact {
+      img {
+        height: 33px;
+        width: 33px;
+        border-radius: 50%;
+      }
+    }
+
+    &_message {
+      overflow-y: auto;
+      
+      &_date {
+        font-size: 10px;
+        font-style: italic;
+      }
+
+      &_message-width {
+        max-width: 60%;
+      }
+    }
   }
 
   &__new-chart {
     border-left: 1px solid $light-grey;
+    height:100vh;
   }
 }
 

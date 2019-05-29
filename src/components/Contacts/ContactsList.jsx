@@ -11,19 +11,20 @@ export default class ContactsList extends React.Component {
   }
 
   renderContacts() {
-    return this.props.store.contacts.map(el => {
+    return this.props.store.contactsOverview.map(el => {
       return <Contact
                name={el.name}
                image={el.image}
                lastMessage={el.lastMessage}
                lastDate={el.lastDate}
-               key={el.name}
+               key={el.id}
+               id={el.id}
       />
     });
   }
 
   render() {
-    return <div className="App__contacts_list container">
+    return <div className="App__contacts_list">
       {this.renderContacts()}
     </div>;
   }
