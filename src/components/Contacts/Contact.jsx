@@ -21,13 +21,17 @@ export default class Contact extends React.Component {
 
   render() {
     return (<div
-      className="App__contacts_item d-flex align-items-center border-top border-bottom border-light px-2"
+      className={"App__contacts_item d-flex align-items-center border-top border-bottom border-light px-2 "
+      + (this.props.store.idNameOfOpenChart === this.props.id ? "bg-light" : "")}
       onClick={() => this.openNewChart(this.props.id)}
     >
-      <img src={images[this.props.image]} className="img-fluid mr-2"/>
+      <img src={images[this.props.image]} className="App__contacts_item_contact-image mr-2"/>
       <div className="text-truncate">
         <h6 className="d-inline-block">{this.props.name}</h6><br/>
-        <p className="d-inline-block text-secondary">{this.props.lastMessage}</p>
+        {this.props.lastMessage.includes("image_") ?
+          <img src={window.localStorage.getItem(this.props.lastMessage)} className="App__contacts_item_uploaded-image"/> :
+          <p className="d-inline-block text-secondary">{this.props.lastMessage}</p>
+        }
       </div>
       <div className="ml-auto text-secondary">
         {this.props.lastDate}

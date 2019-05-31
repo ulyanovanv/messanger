@@ -7,19 +7,27 @@ $light-grey: #fafafa;
 
     &_list {
       overflow-y: auto;
+      height: inherit;
     }
 
     &_item {
       height:100px;
 
-      img {
+      &_contact-image {
         height: 90px;
         width: 90px;
         border-radius: 50%;
+        min-width: 90px;
       }
 
       &:hover {
         background-color: $light-grey;
+      }
+
+      &_uploaded-image {
+        max-height: 40px;
+        max-width: 40px;
+        border-radius: 5px;
       }
     }
   }
@@ -38,7 +46,14 @@ $light-grey: #fafafa;
 
     &_message {
       overflow-y: auto;
-      
+      height: inherit;
+
+      //img {
+      //  height: 33px;
+      //  width: 33px;
+      //  border-radius: 50%;
+      //}
+
       &_date {
         font-size: 10px;
         font-style: italic;
@@ -46,6 +61,29 @@ $light-grey: #fafafa;
 
       &_message-width {
         max-width: 60%;
+      }
+
+      &_user-image {
+        height: 33px;
+        width: 33px;
+        border-radius: 50%;
+      }
+
+      &_my-image {
+        height: 33px;
+        width: 33px;
+        min-width: 33px;
+        border-radius: 50%;
+        background-color: lightgrey;
+        font-weight: bold;
+        color: lightslategray;
+        text-align: center;
+        line-height: 32px;
+      }
+
+      &_loaded-image {
+        max-width: 300px;
+        max-height: 300px;
       }
     }
   }

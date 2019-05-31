@@ -25,6 +25,22 @@ export default class MessangerStore {
     this.idNameOfOpenChart = id;
   }
 
+  @action.bound addNewMessage(message) {
+    let currentChart = this.openChart;
+    let openChartHistory = currentChart.messangers.slice();
+
+    openChartHistory.push({
+      message: message,
+      date: moment(new Date).format("DD.MM.YYYY"),
+      user: 'me'
+    });
+
+    let newChartHistory = Object.assign({}, currentChart, {'messangers': openChartHistory});
+
+    let chartIndex = this.charts.findIndex(el => el.id === this.idNameOfOpenChart);
+    this.charts[chartIndex] = newChartHistory;
+  }
+
 
   @computed get openChart() {
     return this.charts.find(el => el.id === this.idNameOfOpenChart);

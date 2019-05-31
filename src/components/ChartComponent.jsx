@@ -21,7 +21,10 @@ export default class ChartComponent extends Component {
         name={currentChart.name}
         image={images[currentChart.image]}
       />
-      <Chart messangers={currentChart.messangers} id={currentChart.id}/>
+      <Chart
+        messangers={currentChart.messangers}
+        id={currentChart.id}
+      />
       <NewMessage />
     </div>
   }

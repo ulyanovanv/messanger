@@ -1,21 +1,58 @@
 .App__contacts {
-  border-right: 1px solid #fafafa; }
+  border-right: 1px solid #fafafa;
+  height: 100vh; }
   .App__contacts_list {
-    height: 100vh; }
+    overflow-y: auto;
+    height: inherit; }
   .App__contacts_item {
-    height: 110px; }
-    .App__contacts_item img {
-      height: 100px;
-      width: 100px;
+    height: 100px; }
+    .App__contacts_item_contact-image {
+      height: 90px;
+      width: 90px;
       border-radius: 50%; }
     .App__contacts_item:hover {
       background-color: #fafafa; }
+    .App__contacts_item_uploaded-image {
+      max-height: 40px;
+      max-width: 40px;
+      border-radius: 5px; }
 
 .App__charts {
-  border-left: 1px solid #fafafa; }
+  border-left: 1px solid #fafafa;
+  height: 100vh; }
+  .App__charts_contact img {
+    height: 33px;
+    width: 33px;
+    border-radius: 50%; }
+  .App__charts_message {
+    overflow-y: auto;
+    height: inherit; }
+    .App__charts_message_date {
+      font-size: 10px;
+      font-style: italic; }
+    .App__charts_message_message-width {
+      max-width: 60%; }
+    .App__charts_message_user-image {
+      height: 33px;
+      width: 33px;
+      border-radius: 50%; }
+    .App__charts_message_my-image {
+      height: 33px;
+      width: 33px;
+      min-width: 33px;
+      border-radius: 50%;
+      background-color: lightgrey;
+      font-weight: bold;
+      color: lightslategray;
+      text-align: center;
+      line-height: 32px; }
+    .App__charts_message_loaded-image {
+      max-width: 300px;
+      max-height: 300px; }
 
 .App__new-chart {
-  border-left: 1px solid #fafafa; }
+  border-left: 1px solid #fafafa;
+  height: 100vh; }
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
