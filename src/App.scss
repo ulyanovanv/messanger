@@ -1,27 +1,43 @@
 $light-grey: #fafafa;
 
+//placeholder classes
+.component-setup {
+  border-right: 1px solid $light-grey;
+  height:100vh;
+}
+
+.overflow-y {
+  overflow-y: auto;
+  height: inherit;
+}
+
+.small-author-image {
+  height: 33px;
+  width: 33px;
+  border-radius: 50%;
+}
+
+// application custom rules
 .App {
   &__contacts {
-    border-right: 1px solid $light-grey;
-    height:100vh;
+    @extend .component-setup;
 
     &_list {
-      overflow-y: auto;
-      height: inherit;
+      @extend .overflow-y;
     }
 
     &_item {
       height:100px;
+
+      &:hover {
+        background-color: $light-grey;
+      }
 
       &_contact-image {
         height: 90px;
         width: 90px;
         border-radius: 50%;
         min-width: 90px;
-      }
-
-      &:hover {
-        background-color: $light-grey;
       }
 
       &_uploaded-image {
@@ -32,27 +48,15 @@ $light-grey: #fafafa;
     }
   }
 
-  &__charts {
-    border-left: 1px solid $light-grey;
-    height:100vh;
+  &__chats {
+    @extend .component-setup;
 
-    &_contact {
-      img {
-        height: 33px;
-        width: 33px;
-        border-radius: 50%;
-      }
+    &_contact img {
+      @extend .small-author-image;
     }
 
     &_message {
-      overflow-y: auto;
-      height: inherit;
-
-      //img {
-      //  height: 33px;
-      //  width: 33px;
-      //  border-radius: 50%;
-      //}
+      @extend .overflow-y;
 
       &_date {
         font-size: 10px;
@@ -64,16 +68,13 @@ $light-grey: #fafafa;
       }
 
       &_user-image {
-        height: 33px;
-        width: 33px;
-        border-radius: 50%;
+        @extend .small-author-image;
       }
 
       &_my-image {
-        height: 33px;
-        width: 33px;
+        @extend .small-author-image;
+
         min-width: 33px;
-        border-radius: 50%;
         background-color: lightgrey;
         font-weight: bold;
         color: lightslategray;
@@ -86,11 +87,22 @@ $light-grey: #fafafa;
         max-height: 300px;
       }
     }
+
+    &_new-message.input-group {
+      height: 60px;
+
+      textarea {
+        height: 40px;
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+    }
   }
 
-  &__new-chart {
-    border-left: 1px solid $light-grey;
-    height:100vh;
+  &__new-chat {
+    @extend .component-setup;
   }
 }
 

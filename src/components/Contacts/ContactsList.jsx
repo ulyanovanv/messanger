@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import Contact from "./Contact.jsx";
 import {inject, observer} from "mobx-react/index";
+
+import Contact from "./Contact.jsx";
 
 @inject('store') @observer
 export default class ContactsList extends React.Component {

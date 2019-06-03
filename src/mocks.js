@@ -1,10 +1,10 @@
-let charts = () => {
+let chats = () => {
   return [
     {
       name: "Ara Targaryen",
       id: "ara",
       image: "ara",
-      messangers: [
+      messages: [
         {
           message: "Hello, how do you do?",
           date: "28.04.2019",
@@ -68,7 +68,7 @@ let charts = () => {
       name: "Kakadu Lannister",
       image: "kakadu",
       id: "kakadu",
-      messangers: [
+      messages: [
         {
           message: "Hello, how do you do?",
           date: "29.05.2019",
@@ -132,7 +132,7 @@ let charts = () => {
       name: "Amazon Stark",
       image: "amazon",
       id: "amazon",
-      messangers: [
+      messages: [
         {
           message: "Hello, how do you do?",
           date: "19.05.2019",
@@ -184,7 +184,7 @@ let charts = () => {
       name: "Grey Greyjoy",
       image: "grey",
       id: "grey",
-      messangers: [
+      messages: [
 
         {
           message: "Can you help me with the project?",
@@ -207,7 +207,7 @@ let charts = () => {
       name: "Indi Baratheon",
       image: "indi",
       id: "indi",
-      messangers: [
+      messages: [
         {
           message: "Can you help me with the project?",
           date: "10.05.2018",
@@ -229,7 +229,7 @@ let charts = () => {
       name: "Rozella Tully",
       image: "rozela",
       id: "rozela",
-      messangers: [
+      messages: [
         {
           message: "Can you help me with the project?",
           date: "10.05.2018",
@@ -261,4 +261,4 @@ let contacts = () => {
   return [ "Ara Targarien", "Kakadu Lanister", "Amazon Stark", "Grey Greyjoy",  "Indi Baratheon", "Rozella Tully" ];
 };
 
-export {contacts, charts};
+export {contacts, chats};

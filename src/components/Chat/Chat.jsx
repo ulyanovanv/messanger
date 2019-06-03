@@ -5,7 +5,7 @@ import shortid from 'shortid';
 import images from "./../../helpers/images.js";
 
 @inject('store') @observer
-export default class Chart extends Component {
+export default class Chat extends Component {
   constructor(props) {
     super(props);
 
@@ -25,14 +25,16 @@ export default class Chart extends Component {
   }
 
   scrollDown() {
-    this.scrollRed.current.scrollTo(0, window.innerHeight);
+    let chartScrollHeight = document.getElementsByClassName("App__chats_message")[0].scrollHeight;
+    this.scrollRed.current.scrollTo(0, chartScrollHeight);
   }
 
   renderAuthorImage(message) {
     let condition = message.user === this.props.id;
-    let myImage = <div className="App__charts_message_my-image mr-2"> me </div>;
+    let myImage = <div className="App__chats_message_my-image mr-2"> me </div>;
+    let userImage = <img src={images[this.props.id]} className="App__chats_message_user-image mr-2"/>;
 
-    return condition ? <img src={images[this.props.id]} className="App__charts_message_user-image mr-2"/> : myImage;
+    return condition ? userImage : myImage;
   }
 
   renderMessage(message) {
@@ -40,7 +42,7 @@ export default class Chart extends Component {
 
     let messageContent = message.message.includes("image_") ?
       <img src={window.localStorage.getItem(message.message)}
-           className="App__charts_message_loaded-image rounded"
+           className="App__chats_message_loaded-image rounded"
            id={message.message}
            onLoad={this.scrollDown}
       /> : message.message;
@@ -48,7 +50,7 @@ export default class Chart extends Component {
     return (
       <div className={"p-1 rounded " + (condition ? "bg-light text-dark" : "bg-secondary text-white")}>
         {messageContent} {" "}
-        <span className={"App__charts_message_date "
+        <span className={"App__chats_message_date "
           + (condition ? "text-secondary align-self-start" : "text-light align-self-end")}>
           {message.date}
         </span>
@@ -57,12 +59,12 @@ export default class Chart extends Component {
   }
 
   render() {
-    let {messangers} = this.props;
-    let prepaireMessangers = messangers.map(message => {
+    let {messages} = this.props;
+    let prepairedMessages = messages.map(message => {
       let condition = message.user === this.props.id;
 
       return <div
-        className={"App__charts_message_message-width d-flex flex-row align-content-center mb-1 "
+        className={"App__chats_message_message-width d-flex flex-row align-content-center mb-1 "
         + (condition ? "mr-auto" : "ml-auto")}
         key={shortid.generate()}
       >
@@ -71,8 +73,8 @@ export default class Chart extends Component {
       </div>
     });
 
-    return <div className="App__charts_message d-flex flex-column m-2" ref={this.scrollRed}>
-      {prepaireMessangers}
+    return <div className="App__chats_message d-flex flex-column m-2" ref={this.scrollRed}>
+      {prepairedMessages}
     </div>
   }
 }

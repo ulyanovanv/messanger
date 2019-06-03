@@ -37,33 +37,31 @@ export default class NewMessage extends Component {
   }
 
   render() {
-    return <div className="input-group p-2">
-      <input type="text"
-             className="form-control"
-             placeholder="Enter message text"
-             aria-describedby="button-addon4"
-             value={this.message}
-             onChange={(event) => this.message = event.target.value}
-      />
-        <div className="input-group-append" id="button-addon4">
-          <div className="custom-file">
-            <input
-              className="btn btn-outline-secondary custom-file-input"
-              id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"
-              type="file"
-              accept="image/x-png,image/gif,image/jpeg"
-              onChange={(e) => this.uploadImage(e)}
-            />
-            <label className="custom-file-label" htmlFor="inputGroupFile01">Choose file</label>
-          </div>
+    return (
+    <div className="input-group p-2 App__chats_new-message">
+      <textarea className="form-control"
+                placeholder="Enter message text"
+                aria-describedby="button-addon4"
+                value={this.message}
+                onChange={(event) => this.message = event.target.value} />
+      <div className="input-group-append" id="button-addon4">
+        <label className="btn btn-outline-secondary btn-file mb-0">
+          Add image
           <input
-            className="btn btn-outline-success"
-            type="button"
-            value="Send"
-            onClick={() => this.sendMessage()}
+            type="file"
+            value=""
+            accept="image/x-png,image/gif,image/jpeg"
+            onChange={(e) => this.uploadImage(e)}
           />
-        </div>
-    </div>
+        </label>
+        <input
+          className="btn btn-outline-success"
+          type="button"
+          value="Send"
+          onClick={() => this.sendMessage()}
+        />
+      </div>
+    </div>);
   }
 }
 

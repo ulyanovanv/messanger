@@ -3,31 +3,31 @@ import moment from 'moment';
 
 export default class MessangerStore {
   @observable contactsList = [];
-  @observable charts = [];
-  @observable isNewChart = false;
-  @observable idNameOfOpenChart = '';
+  @observable chats = [];
+  @observable isNewChat = false;
+  @observable idOfOpenChart = '';
 
 
   @action.bound setContactsList(contacts) {
     this.contactsList = contacts;
   }
 
-  @action.bound setCharts(charts) {
-    this.charts = charts;
-    this.idNameOfOpenChart = this.contactsOverview[0].id;
+  @action.bound setChats(chats) {
+    this.chats = chats;
+    this.idOfOpenChart = this.contactsOverview[0].id;
   }
 
-  @action.bound toggleChartWindow() {
-    this.isNewChart = !this.isNewChart;
+  @action.bound toggleChatWindow() {
+    this.isNewChat = !this.isNewChat;
   }
 
-  @action.bound setIdNameOfOpenChart(id) {
-    this.idNameOfOpenChart = id;
+  @action.bound setIdOfOpenChart(id) {
+    this.idOfOpenChart = id;
   }
 
   @action.bound addNewMessage(message) {
-    let currentChart = this.openChart;
-    let openChartHistory = currentChart.messangers.slice();
+    let currentChart = this.openChat;
+    let openChartHistory = currentChart.messages.slice();
 
     openChartHistory.push({
       message: message,
@@ -35,20 +35,20 @@ export default class MessangerStore {
       user: 'me'
     });
 
-    let newChartHistory = Object.assign({}, currentChart, {'messangers': openChartHistory});
+    let newChartHistory = Object.assign({}, currentChart, {'messages': openChartHistory});
 
-    let chartIndex = this.charts.findIndex(el => el.id === this.idNameOfOpenChart);
-    this.charts[chartIndex] = newChartHistory;
+    let chartIndex = this.chats.findIndex(el => el.id === this.idOfOpenChart);
+    this.chats[chartIndex] = newChartHistory;
   }
 
 
-  @computed get openChart() {
-    return this.charts.find(el => el.id === this.idNameOfOpenChart);
+  @computed get openChat() {
+    return this.chats.find(el => el.id === this.idOfOpenChart);
   }
 
   @computed get contactsOverview() {
-    let contacts = this.charts.map(obj => {
-      let lastMessage = obj.messangers[obj.messangers.length - 1];
+    let contacts = this.chats.map(obj => {
+      let lastMessage = obj.messages[obj.messages.length - 1];
 
       return {
         name: obj.name,

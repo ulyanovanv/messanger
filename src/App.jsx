@@ -1,12 +1,11 @@
 import React, { Component, Fragment } from "react";
 import {inject, observer} from "mobx-react/index";
 
-import {contacts, charts} from "./mocks.js";
+import {contacts, chats} from "./mocks.js";
 import ContactsComponent from "./components/ContactsComponent.jsx";
-import ChartComponent from "./components/ChartComponent.jsx";
-import NewChartComponent from "./components/NewChartComponent.jsx";
+import ChatComponent from "./components/ChatComponent.jsx";
+import NewChatComponent from "./components/NewChatComponent.jsx";
 import handlePromise from "./helpers/promise.js";
-
 
 @inject('store') @observer
 export default class App extends React.Component {
@@ -16,10 +15,10 @@ export default class App extends React.Component {
 
   componentDidMount() {
     let allContacts = contacts();
-    let allCharts = charts();
+    let allChats = chats();
 
     handlePromise(allContacts, this.props.store.setContactsList);
-    handlePromise(allCharts, this.props.store.setCharts);
+    handlePromise(allChats, this.props.store.setChats);
   }
 
   render() {
@@ -27,8 +26,8 @@ export default class App extends React.Component {
       <div className="App container-fluid">
          <div className="row">
           <ContactsComponent />
-          {!this.props.store.isNewChart && <ChartComponent />}
-          {this.props.store.isNewChart && <NewChartComponent />}
+          {!this.props.store.isNewChat && <ChatComponent />}
+          {this.props.store.isNewChat && <NewChatComponent />}
         </div>
       </div>
     );

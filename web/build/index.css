@@ -9,7 +9,8 @@
     .App__contacts_item_contact-image {
       height: 90px;
       width: 90px;
-      border-radius: 50%; }
+      border-radius: 50%;
+      min-width: 90px; }
     .App__contacts_item:hover {
       background-color: #fafafa; }
     .App__contacts_item_uploaded-image {
@@ -49,6 +50,10 @@
     .App__charts_message_loaded-image {
       max-width: 300px;
       max-height: 300px; }
+  .App__charts_new-message {
+    height: 60px; }
+    .App__charts_new-message textarea {
+      height: 40px; }
 
 .App__new-chart {
   border-left: 1px solid #fafafa;
