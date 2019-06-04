@@ -4,7 +4,6 @@ import {inject, observer} from "mobx-react/index";
 import ChatContacts from "./Chat/ChatContacts.jsx";
 import Chat from "./Chat/Chat.jsx";
 import NewMessage from "./Chat/NewMessage.jsx";
-import images from "./../helpers/images.js";
 
 @inject('store') @observer
 export default class ChatComponent extends Component {
@@ -18,12 +17,12 @@ export default class ChatComponent extends Component {
 
     return <div className="App__chats col-8 d-flex flex-column p-0">
       <ChatContacts
-        name={currentChat.name}
-        image={images[currentChat.image]}
+        // name={currentChat.name}
+        // image={images[currentChat.image]}
+        contacts={currentChat.contacts}
       />
       <Chat
         messages={currentChat.messages}
-        id={currentChat.id}
       />
       <NewMessage />
     </div>

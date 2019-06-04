@@ -12,6 +12,16 @@ export default class NewMessage extends Component {
 
     this.sendMessage = this.sendMessage.bind(this);
     this.uploadImage = this.uploadImage.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
+
+  handleKeyDown(e) {
+    let keyCode = e.keyCode || e.which;
+
+    if (keyCode === 13) {
+      e.preventDefault();
+      this.sendMessage();
+    }
   }
 
   sendMessage() {
@@ -41,11 +51,14 @@ export default class NewMessage extends Component {
   render() {
     return (
     <div className="input-group p-2 App__chats_new-message">
-      <textarea className="form-control"
-                placeholder="Enter message text"
-                aria-describedby="button-addon4"
-                value={this.message}
-                onChange={(event) => this.message = event.target.value} />
+      <textarea
+        className="form-control"
+        placeholder="Enter message text"
+        aria-describedby="button-addon4"
+        value={this.message}
+        onChange={(event) => this.message = event.target.value}
+        onKeyDown={(e) => this.handleKeyDown(e)}
+      />
       <div className="input-group-append" id="button-addon4">
         <label className="btn btn-outline-secondary btn-file mb-0">
           Add image

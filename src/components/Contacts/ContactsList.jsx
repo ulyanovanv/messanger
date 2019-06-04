@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {inject, observer} from "mobx-react/index";
+import shortid from 'shortid';
 
 import Contact from "./Contact.jsx";
 
@@ -15,12 +16,12 @@ export default class ContactsList extends React.Component {
     return this.props.store.contactsOverview.map(el => {
 
       return <Contact
-               name={el.name}
-               image={el.image}
+               contacts={el.contacts}
                lastMessage={el.lastMessage}
                lastDate={el.lastDate}
-               key={el.id}
-               id={el.id}
+               lastUser={el.lastUser}
+               key={shortid.generate()}
+               id={el.idOfChart}
       />
     });
   }

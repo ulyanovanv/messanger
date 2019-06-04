@@ -6,10 +6,10 @@ export default class MessangerStore {
   @observable contactsList = [];
   @observable chats = [];
   @observable isNewChat = false;
-  @observable idOfOpenChart = '';
-  @observable searchedContactString = '';
+  @observable idOfOpenChat = '';
+  @observable searchedContactString = ''; //
   @observable listOfSearchedContacts = [];
-  @observable newChartWithContacts = [];
+  @observable newChatWithContacts = []; //
 
 
   // actions
@@ -19,17 +19,17 @@ export default class MessangerStore {
 
   @action.bound setChats(chats) {
     this.chats = chats;
-    this.idOfOpenChart = this.contactsOverview[0].id;
+    this.idOfOpenChat = this.contactsOverview[0].contacts[0].id;
   }
 
   @action.bound toggleChatWindow() {
     this.isNewChat = !this.isNewChat;
     this.listOfSearchedContacts = [];
-    this.newChartWithContacts = [];
+    this.newChatWithContacts = [];
   }
 
-  @action.bound setIdOfOpenChart(id) {
-    this.idOfOpenChart = id;
+  @action.bound setIdOfOpenChat(id) {
+    this.idOfOpenChat = id;
   }
 
   @action.bound addNewMessage(message) {
@@ -44,7 +44,7 @@ export default class MessangerStore {
 
     let newChartHistory = Object.assign({}, currentChart, {'messages': openChartHistory});
 
-    let chartIndex = this.chats.findIndex(el => el.id === this.idOfOpenChart);
+    let chartIndex = this.chats.findIndex(el => el.id === this.idOfOpenChat);
     this.chats[chartIndex] = newChartHistory;
   }
 
@@ -58,16 +58,24 @@ export default class MessangerStore {
   }
 
   @action.bound addContactToNewChat(name) {
-    if (!this.newChartWithContacts.includes(name)) {
-      this.newChartWithContacts.push(name);
+    if (!this.newChatWithContacts.includes(name)) {
+      this.newChatWithContacts.push(name);
     }
   }
 
-  @action.bound shouldNewChatBeStarted() {
+  @action.bound shouldNewChatBeStarted() { // not action
     let chats = this.chats;
-    for (let i in chats) {
-      if (chats[i].name === this.newChartWithContacts[0]) { //attention - I take only first element
-        return false;
+
+    if (this.newChatWithContacts.length === 1) {
+      let searchedName = this.newChatWithContacts[0];
+      for (let i in chats) {
+        let chatContacts = chats[i].contacts;
+
+        for (let j in chatContacts) {
+          if (chatContacts[j].name === searchedName) {
+            return false;
+          }
+        }
       }
     }
 
@@ -75,12 +83,35 @@ export default class MessangerStore {
   }
 
   @action.bound startNewChat() {
-    let idOfChat = this.contactsList.find(el => el.name === this.newChartWithContacts[0]).image;
+    let contactsForNewChatChat = this.newChatWithContacts; //
+    let contactsList = this.contactsList;
+    let idOfChat;
+    let contacts = [];
+
+    if (contactsForNewChatChat.length > 1) {
+      idOfChat = `${contactsForNewChatChat[0]}_${contactsForNewChatChat[1]}`;
+
+      contactsForNewChatChat.forEach(name => {
+        let objInContactsList = contactsList.find(el => el.name === name);
+        contacts.push({
+          name: objInContactsList.name,
+          id: objInContactsList.image,
+          image: objInContactsList.image,
+        })
+      })
+    } else {
+      idOfChat = contactsList.find(el => el.name === contactsForNewChatChat[0]).image;
+
+      contacts.push({
+        name: contactsForNewChatChat[0],
+        id: idOfChat,
+        image: idOfChat,
+      });
+    }
 
     let newChartData = {
-      name: this.newChartWithContacts[0],
       id: idOfChat,
-      image: idOfChat,
+      contacts: contacts,
       messages: [
         {
           message: "Let's start a chat",
@@ -91,25 +122,25 @@ export default class MessangerStore {
     };
 
     this.chats.push(newChartData);
-    this.setIdOfOpenChart(idOfChat);
+    this.setIdOfOpenChat(idOfChat);
     this.toggleChatWindow();
   }
 
   @action.bound goToExistingChat() {
-    let idOfChat = this.contactsList.find(el => el.name === this.newChartWithContacts[0]).image;
+    let idOfChat = this.contactsList.find(el => el.name === this.newChatWithContacts[0]).image;
 
-    this.setIdOfOpenChart(idOfChat);
+    this.setIdOfOpenChat(idOfChat);
     this.toggleChatWindow();
   }
 
   @action.bound deleteContactFromNewChat(index) {
-    this.newChartWithContacts.splice(index, 1);
+    this.newChatWithContacts.splice(index, 1);
   }
 
 
   //computed values
   @computed get openChat() {
-    return this.chats.find(el => el.id === this.idOfOpenChart);
+    return this.chats.find(el => el.id === this.idOfOpenChat);
   }
 
   @computed get contactsOverview() {
@@ -117,11 +148,11 @@ export default class MessangerStore {
       let lastMessage = obj.messages[obj.messages.length - 1];
 
       return {
-        name: obj.name,
-        image: obj.image,
+        contacts: obj.contacts,
         lastMessage: lastMessage ? lastMessage.message : '',
         lastDate: lastMessage ? lastMessage.date: '',
-        id: obj.id
+        lastUser: lastMessage ? lastMessage.user: '',
+        idOfChart: obj.id
       }
     });
 
@@ -134,4 +165,10 @@ export default class MessangerStore {
 
     return contacts;
   }
+
+  // @computed get namesOfContacts() {
+  //   return this.props.store.contactsList.map(obj => obj.name);
+  // }
 }
+
+// actions should change state

@@ -1,0 +1,24 @@
+.App__new-chat {
+  @extend .component-setup;
+
+  &_add-chat {
+    height: auto;
+    width: inherit;
+
+    input[type="text"] {
+      box-shadow: none;
+    }
+  }
+
+  &_contact-suggetions {
+    cursor: pointer;
+
+    img {
+      @extend .small-author-image;
+    }
+
+    &_each:hover {
+      background-color: $light-grey;
+    }
+  }
+}

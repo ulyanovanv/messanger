@@ -1,8 +1,22 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react";
+
+import images from "./../../helpers/images.js";
 
 export default function ChatContacts(props) {
+  let contacts = props.contacts;
+
+  let chatContacts = contacts.map(obj =>
+    <Fragment key={obj.name}>
+      <img
+        src={images[obj.image]}
+        className="mx-2"
+        title={obj.image}
+      />
+      <h6>{obj.name}</h6>
+    </Fragment>
+  );
+
   return (<div className="App__chats_contact d-flex flex-row justify-content-center align-items-end border-bottom py-2">
-    <img src={props.image} className="mr-2"/>
-    <h6>{props.name}</h6>
+    {chatContacts}
   </div>);
 }

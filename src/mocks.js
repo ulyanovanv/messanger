@@ -1,9 +1,14 @@
 let chats = () => {
   return [
     {
-      name: "Ara Targaryen",
       id: "ara",
-      image: "ara",
+      contacts: [
+        {
+          name: "Ara Targaryen",
+          id: "ara",
+          image: "ara"
+        }
+      ],
       messages: [
         {
           message: "Hello, how do you do?",
@@ -65,9 +70,14 @@ let chats = () => {
       ]
     },
     {
-      name: "Kakadu Lannister",
-      image: "kakadu",
       id: "kakadu",
+      contacts: [
+        {
+          name: "Kakadu Lannister",
+          image: "kakadu",
+          id: "kakadu"
+        }
+      ],
       messages: [
         {
           message: "Hello, how do you do?",
@@ -129,9 +139,14 @@ let chats = () => {
       ]
     },
     {
-      name: "Amazon Stark",
-      image: "amazon",
       id: "amazon",
+      contacts: [
+        {
+          name: "Amazon Stark",
+          image: "amazon",
+          id: "amazon"
+        }
+      ],
       messages: [
         {
           message: "Hello, how do you do?",
@@ -181,11 +196,15 @@ let chats = () => {
       ]
     },
     {
-      name: "Grey Greyjoy",
-      image: "grey",
       id: "grey",
+      contacts: [
+        {
+          name: "Grey Greyjoy",
+          image: "grey",
+          id: "grey"
+        }
+      ],
       messages: [
-
         {
           message: "Can you help me with the project?",
           date: "10.05.2019",
@@ -204,9 +223,14 @@ let chats = () => {
       ]
     },
     {
-      name: "Indi Baratheon",
-      image: "indi",
       id: "indi",
+      contacts: [
+        {
+          name: "Indi Baratheon",
+          image: "indi",
+          id: "indi"
+        }
+      ],
       messages: [
         {
           message: "Can you help me with the project?",
@@ -226,9 +250,24 @@ let chats = () => {
       ]
     },
     {
-      name: "Rozella Tully",
-      image: "rozela",
       id: "rozela",
+      contacts: [
+        {
+          name: "Rozella Tully",
+          image: "rozela",
+          id: "rozela",
+        },
+        {
+          name: "Indi Baratheon",
+          image: "indi",
+          id: "indi"
+        },
+        {
+          name: "Grey Greyjoy",
+          image: "grey",
+          id: "grey"
+        }
+      ],
       messages: [
         {
           message: "Can you help me with the project?",
@@ -238,7 +277,7 @@ let chats = () => {
         {
           message: "...?",
           date: "11.05.2018",
-          user: "rozela"
+          user: "indi"
         },
         {
           message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. " +
@@ -251,6 +290,11 @@ let chats = () => {
           "nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ",
           date: "12.05.2018",
           user: "me"
+        },
+        {
+          message: "English?",
+          date: "13.05.2018",
+          user: "grey"
         },
       ]
     }

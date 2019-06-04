@@ -17,7 +17,7 @@ export default class ContactSearchLine extends Component {
     this.props.store.setSearchedContact(searchedString);
 
     let foundedContacts = this.props.store.contactsList.filter(el => {
-      if (el.name.toLowerCase().includes(searchedString)) {
+      if (el.name.toLowerCase().includes(searchedString) || el.name.toUpperCase().includes(searchedString)) {
         return el.name;
       }
     });
@@ -26,7 +26,7 @@ export default class ContactSearchLine extends Component {
   }
 
   addChosenContactToSearchLine() {
-    let listOfContacts = this.props.store.newChartWithContacts;
+    let listOfContacts = this.props.store.newChatWithContacts;
     if (!listOfContacts.length) return null;
 
     let chosenContacts = listOfContacts.map((el, index) =>
@@ -44,7 +44,7 @@ export default class ContactSearchLine extends Component {
   }
 
   startNewChat() {
-    if (!this.props.store.newChartWithContacts.length) {
+    if (!this.props.store.newChatWithContacts.length) {
       alert("No contact was chosen. Please, choose at least one to start a conversation.");
       return;
     }
@@ -64,6 +64,7 @@ export default class ContactSearchLine extends Component {
         <h6 className="d-block mx-2"> Chat to: </h6>
         {this.addChosenContactToSearchLine()}
         <input
+          autoFocus={!this.props.store.searchedContactString}
           className="btn flex-grow-1 text-black-50 text-left"
           type="text"
           placeholder="Enter the name/names"

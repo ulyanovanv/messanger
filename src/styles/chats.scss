@@ -1,0 +1,57 @@
+.App__chats {
+  @extend .component-setup;
+
+  &_contact {
+    height: 63px;
+
+    img {
+      @extend .small-author-image;
+    }
+  }
+
+  &_message {
+    @extend .overflow-y;
+
+    &_date {
+      font-size: 10px;
+      font-style: italic;
+    }
+
+    &_message-width {
+      max-width: 60%;
+    }
+
+    &_user-image {
+      @extend .small-author-image;
+    }
+
+    &_my-image {
+      @extend .small-author-image;
+
+      min-width: 33px;
+      background-color: lightgrey;
+      font-weight: bold;
+      color: lightslategray;
+      text-align: center;
+      line-height: 32px;
+    }
+
+    &_loaded-image {
+      max-width: 300px;
+      max-height: 300px;
+    }
+  }
+
+  &_new-message.input-group {
+    height: 60px;
+
+    textarea {
+      height: 40px;
+      resize: none;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+  }
+}

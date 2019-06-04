@@ -22,16 +22,20 @@ export default class ContactSuggestion extends Component {
 
     let listOfSearchedContacts = this.props.store.listOfSearchedContacts.map(el => {
       return <div
-          className="App__new-chat_contact-suggestions_each d-flex flex-row align-items-end my-1"
+          className="App__new-chat_contact-suggetions_each d-flex flex-row align-items-end my-1"
           key={shortId.generate()}
           onClick={() => this.addContactToSearchLine(el.name)}
       >
-        <img src={images[el.image]} className="mr-2"/>
+        <img
+          src={images[el.image]}
+          className="mr-2"
+          title={el.image}
+        />
         <h6>{el.name}</h6>
       </div>
     });
 
-    return <div className="App__new-chat_contact-suggestions d-flex flex-column">
+    return <div className="App__new-chat_contact-suggetions d-flex flex-column">
       {listOfSearchedContacts}
     </div>
   }

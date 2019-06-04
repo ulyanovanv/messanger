@@ -29,17 +29,18 @@ export default class Chat extends Component {
     this.scrollRed.current.scrollTo(0, chartScrollHeight);
   }
 
-  renderAuthorImage(message) {
-    let condition = message.user === this.props.id;
+  renderAuthorImage(message, condition) {
     let myImage = <div className="App__chats_message_my-image mr-2"> me </div>;
-    let userImage = <img src={images[this.props.id]} className="App__chats_message_user-image mr-2"/>;
+    let userImage = <img
+      src={images[message.user]}
+      className="App__chats_message_user-image mr-2"
+      title={message.user}
+    />;
 
     return condition ? userImage : myImage;
   }
 
-  renderMessage(message) {
-    let condition = message.user === this.props.id;
-
+  renderMessage(message, condition) {
     let messageContent = message.message.includes("image_") ?
       <img src={window.localStorage.getItem(message.message)}
            className="App__chats_message_loaded-image rounded"
@@ -61,15 +62,15 @@ export default class Chat extends Component {
   render() {
     let {messages} = this.props;
     let prepairedMessages = messages.map(message => {
-      let condition = message.user === this.props.id;
+      let condition = message.user !== "me";
 
       return <div
         className={"App__chats_message_message-width d-flex flex-row align-content-center mb-1 "
         + (condition ? "mr-auto" : "ml-auto")}
         key={shortid.generate()}
       >
-        {this.renderAuthorImage(message)}
-        {this.renderMessage(message)}
+        {this.renderAuthorImage(message, condition)}
+        {this.renderMessage(message, condition)}
       </div>
     });
 

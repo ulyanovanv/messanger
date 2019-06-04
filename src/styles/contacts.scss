@@ -1,0 +1,46 @@
+.App__contacts {
+  @extend .component-setup;
+
+  &_title {
+    height: 58px;
+  }
+
+  &_list {
+    @extend .overflow-y;
+  }
+
+  &_item {
+    height: 100px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $light-grey;
+    }
+
+    &_contact-image {
+      height: 90px;
+      width: 90px;
+      border-radius: 50%;
+      min-width: 90px;
+    }
+
+    &_contact-image-small {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      min-width: 40px;
+    }
+
+    &_image-box {
+      height: 90px;
+      width: 90px;
+      min-width: 90px;
+    }
+
+    &_uploaded-image {
+      max-height: 40px;
+      max-width: 40px;
+      border-radius: 5px;
+    }
+  }
+}
