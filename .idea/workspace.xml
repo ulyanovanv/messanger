@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/App.scss" line="53" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/src/App.scss" line="57" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7f89a94-d7ee-4687-973c-05d196a58fef" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/NewChat/ContactSearchLine.jsx" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/NewChat/ContactSuggestion.jsx" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/images/senegal.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/images/sun.jpg" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" afterPath="$PROJECT_DIR$/src/App.jsx" />
       <change beforePath="$PROJECT_DIR$/src/App.scss" afterPath="$PROJECT_DIR$/src/App.scss" />
-      <change beforePath="$PROJECT_DIR$/src/components/Chart/Chart.jsx" afterPath="$PROJECT_DIR$/src/components/Chat/Chat.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/components/Chart/ChartContacts.jsx" afterPath="$PROJECT_DIR$/src/components/Chat/ChatContacts.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/components/Chart/NewMessage.jsx" afterPath="$PROJECT_DIR$/src/components/Chat/NewMessage.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/components/ChartComponent.jsx" afterPath="$PROJECT_DIR$/src/components/ChatComponent.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/components/Charts.jsx" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/Contacts/Contact.jsx" afterPath="$PROJECT_DIR$/src/components/Contacts/Contact.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/Chat/NewMessage.jsx" afterPath="$PROJECT_DIR$/src/components/Chat/NewMessage.jsx" />
       <change beforePath="$PROJECT_DIR$/src/components/Contacts/ContactsList.jsx" afterPath="$PROJECT_DIR$/src/components/Contacts/ContactsList.jsx" />
       <change beforePath="$PROJECT_DIR$/src/components/ContactsComponent.jsx" afterPath="$PROJECT_DIR$/src/components/ContactsComponent.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewChartComponent.jsx" afterPath="$PROJECT_DIR$/src/components/NewChatComponent.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/NewChatComponent.jsx" afterPath="$PROJECT_DIR$/src/components/NewChatComponent.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/images.js" afterPath="$PROJECT_DIR$/src/helpers/images.js" />
       <change beforePath="$PROJECT_DIR$/src/mocks.js" afterPath="$PROJECT_DIR$/src/mocks.js" />
       <change beforePath="$PROJECT_DIR$/src/store/MessangerStore.js" afterPath="$PROJECT_DIR$/src/store/MessangerStore.js" />
-      <change beforePath="$PROJECT_DIR$/web/build/index.css" afterPath="$PROJECT_DIR$/web/build/index.css" />
-      <change beforePath="$PROJECT_DIR$/web/build/index.js" afterPath="$PROJECT_DIR$/web/build/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,21 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="App.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="50" column="8" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessangerStore.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MessangerStore.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/MessangerStore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="30" />
+            <state relative-caret-position="198">
+              <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -56,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatComponent.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/ChatComponent.jsx">
+      <file leaf-file-name="ContactSearchLine.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/NewChat/ContactSearchLine.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="41" lean-forward="true" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+            <state relative-caret-position="774">
+              <caret line="43" column="3" lean-forward="true" selection-start-line="43" selection-start-column="3" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -68,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewMessage.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Chat/NewMessage.jsx">
+      <file leaf-file-name="ContactSuggestion.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/NewChat/ContactSuggestion.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+            <state relative-caret-position="288">
+              <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -80,14 +67,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Chat.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Chat/Chat.jsx">
+      <file leaf-file-name="ContactsList.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Contacts/ContactsList.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="783">
-              <caret line="78" column="3" lean-forward="true" selection-start-line="78" selection-start-column="3" selection-end-line="78" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="216">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mocks.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mocks.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4563">
+              <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,18 +101,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>NewChartComponent</find>
-      <find>import Contact</find>
-      <find>Charts</find>
-      <find>classNme</find>
-      <find>ContactsList</find>
-      <find>setContactsOverview</find>
       <find>contactsList</find>
       <find>setContactsList</find>
       <find>contactsOverview</find>
       <find>message-width</find>
       <find>_contact</find>
-      <find>moment</find>
       <find>localStorage</find>
       <find>localsto</find>
       <find>sess</find>
@@ -136,11 +124,18 @@
       <find>this.props.mes</find>
       <find>currentChart</find>
       <find>messanger</find>
+      <find>hover</find>
+      <find>listOfSearchedContacts</find>
+      <find>this.chats.map</find>
+      <find>moment</find>
+      <find>App__contacts_list</find>
+      <find>.name</find>
+      <find>deleteContactFromNewChat</find>
     </findStrings>
     <replaceStrings>
       <replace>localStorage</replace>
-      <replace>App__chat</replace>
       <replace>idOfOpenChart</replace>
+      <replace>App__chat</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\OOP_projects\messanger\src</dir>
@@ -172,7 +167,6 @@
         <option value="$PROJECT_DIR$/src/components/Contacts/ContactsList.js" />
         <option value="$PROJECT_DIR$/src/components/Charts.jsx" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
-        <option value="$PROJECT_DIR$/src/helpers/images.js" />
         <option value="$PROJECT_DIR$/src/helpers/promise.js" />
         <option value="$PROJECT_DIR$/src/components/Chart/ChartContacts.js" />
         <option value="$PROJECT_DIR$/src/components/Chart/Chart.js" />
@@ -182,17 +176,22 @@
         <option value="$PROJECT_DIR$/src/components/Chart/NewMessage.jsx" />
         <option value="$PROJECT_DIR$/src/components/Chart/Chart.jsx" />
         <option value="$PROJECT_DIR$/src/App.jsx" />
-        <option value="$PROJECT_DIR$/src/components/ContactsComponent.jsx" />
-        <option value="$PROJECT_DIR$/src/components/Contacts/ContactsList.jsx" />
         <option value="$PROJECT_DIR$/src/components/Contacts/Contact.jsx" />
-        <option value="$PROJECT_DIR$/src/components/NewChatComponent.jsx" />
         <option value="$PROJECT_DIR$/src/components/Chat/Chart.jsx" />
-        <option value="$PROJECT_DIR$/src/App.scss" />
         <option value="$PROJECT_DIR$/src/components/Chat/ChatContacts.jsx" />
-        <option value="$PROJECT_DIR$/src/mocks.js" />
         <option value="$PROJECT_DIR$/src/components/ChatComponent.jsx" />
+        <option value="$PROJECT_DIR$/src/components/NewChat/ContactSearchLine.js" />
+        <option value="$PROJECT_DIR$/src/components/NewChat/ContactSuggestion.js" />
+        <option value="$PROJECT_DIR$/src/components/NewChatComponent.jsx" />
+        <option value="$PROJECT_DIR$/src/helpers/images.js" />
+        <option value="$PROJECT_DIR$/src/components/ContactsComponent.jsx" />
+        <option value="$PROJECT_DIR$/src/App.scss" />
         <option value="$PROJECT_DIR$/src/components/Chat/Chat.jsx" />
+        <option value="$PROJECT_DIR$/src/mocks.js" />
+        <option value="$PROJECT_DIR$/src/components/NewChat/ContactSuggestion.jsx" />
+        <option value="$PROJECT_DIR$/src/components/NewChat/ContactSearchLine.jsx" />
         <option value="$PROJECT_DIR$/src/components/Chat/NewMessage.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Contacts/ContactsList.jsx" />
         <option value="$PROJECT_DIR$/src/store/MessangerStore.js" />
       </list>
     </option>
@@ -212,7 +211,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="width" value="1920" />
     <option name="height" value="1030" />
@@ -271,7 +270,20 @@
               <item name="messanger" type="b2602c69:ProjectViewProjectNode" />
               <item name="messanger" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="NewChat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="messanger" type="b2602c69:ProjectViewProjectNode" />
+              <item name="messanger" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="messanger" type="b2602c69:ProjectViewProjectNode" />
+              <item name="messanger" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -328,17 +340,18 @@
       <updated>1558979223437</updated>
       <workItem from="1558979225832" duration="24686000" />
       <workItem from="1559076725645" duration="53267000" />
-      <workItem from="1559564880113" duration="5868000" />
+      <workItem from="1559564880113" duration="21059000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83821000" />
+    <option name="totallyTimeSpent" value="99012000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22792174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22792174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -483,7 +496,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="10" column="40" lean-forward="true" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-          <folding />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -511,9 +526,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="22" column="3" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -580,6 +593,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="66" column="25" lean-forward="false" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -628,18 +642,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Chat/ChatContacts.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="43" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ChatComponent.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/helpers/images.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-          <folding />
+        <state relative-caret-position="360">
+          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Contacts/Contact.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+        <state relative-caret-position="585">
+          <caret line="34" column="11" lean-forward="false" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="91" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-191">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Chat/Chat.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="47" column="27" lean-forward="false" selection-start-line="47" selection-start-column="27" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContactsComponent.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -648,91 +710,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/NewChatComponent.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="50" column="8" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Chat/ChatContacts.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mocks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="231" column="14" lean-forward="false" selection-start-line="231" selection-start-column="14" selection-end-line="231" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ContactsComponent.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Contacts/ContactsList.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ChatComponent.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="41" lean-forward="true" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+        <state relative-caret-position="198">
+          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="40" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Chat/Chat.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="78" column="3" lean-forward="true" selection-start-line="78" selection-start-column="3" selection-end-line="78" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Chat/NewMessage.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+        <state relative-caret-position="324">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/NewChat/ContactSuggestion.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/NewChat/ContactSearchLine.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="43" column="3" lean-forward="true" selection-start-line="43" selection-start-column="3" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mocks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4563">
+          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/MessangerStore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="30" />
+        <state relative-caret-position="198">
+          <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Contacts/ContactsList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

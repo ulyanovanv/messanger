@@ -22,6 +22,10 @@ $light-grey: #fafafa;
   &__contacts {
     @extend .component-setup;
 
+    &_title {
+      height: 58px;
+    }
+
     &_list {
       @extend .overflow-y;
     }
@@ -103,6 +107,25 @@ $light-grey: #fafafa;
 
   &__new-chat {
     @extend .component-setup;
+
+    &_add-chat {
+      height: auto;
+      width: inherit;
+
+      input[type="text"] {
+        box-shadow: none;
+      }
+    }
+
+    &_contact-suggestions {
+      img {
+        @extend .small-author-image;
+      }
+
+      &_each:hover {
+        background-color: $light-grey;
+      }
+    }
   }
 }
 

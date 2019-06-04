@@ -13,6 +13,7 @@ export default class ContactsList extends React.Component {
 
   renderContacts() {
     return this.props.store.contactsOverview.map(el => {
+
       return <Contact
                name={el.name}
                image={el.image}

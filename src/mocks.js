@@ -258,7 +258,40 @@ let chats = () => {
 };
 
 let contacts = () => {
-  return [ "Ara Targarien", "Kakadu Lanister", "Amazon Stark", "Grey Greyjoy",  "Indi Baratheon", "Rozella Tully" ];
+  return [
+    {
+      name: "Ara Targaryen",
+      image: "ara"
+    },
+    {
+      name: "Kakadu Lannister",
+      image: "kakadu"
+    },
+    {
+      name: "Amazon Stark",
+      image: "amazon"
+    },
+    {
+      name: "Grey Greyjoy",
+      image: "grey"
+    },
+    {
+      name: "Indi Baratheon",
+      image: "indi"
+    },
+    {
+      name: "Rozella Tully",
+      image: "rozela"
+    },
+    {
+      name: "Senegal Tyrell",
+      image: "senegal"
+    },
+    {
+      name: "Sun Arryn",
+      image: "sun"
+    }
+  ]
 };
 
 export {contacts, chats};

@@ -15,6 +15,8 @@ export default class NewMessage extends Component {
   }
 
   sendMessage() {
+    if (!this.message) return;
+
     this.props.store.addNewMessage(this.message);
     this.message = '';
   }
@@ -57,7 +59,7 @@ export default class NewMessage extends Component {
         <input
           className="btn btn-outline-success"
           type="button"
-          value="Send"
+          value="Send message"
           onClick={() => this.sendMessage()}
         />
       </div>

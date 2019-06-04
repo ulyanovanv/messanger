@@ -19,7 +19,7 @@ export default class ContactsComponent extends Component {
 
   render() {
     return <div className="App__contacts col-4 d-flex flex-column p-0">
-      <div className="d-flex flex-row justify-content-around align-items-baseline border-bottom py-2">
+      <div className="App__contacts_title d-flex flex-row justify-content-around align-items-baseline border-bottom py-2">
         <button className="invisible ">add chart</button>
         <h5 className="text-center">Messanger</h5>
         <button
