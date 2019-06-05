@@ -30,7 +30,7 @@ export default class ContactSuggestion extends Component {
       >
         <img
           src={images[el.image]}
-          className="mr-2"
+          className="mx-2"
           title={el.image}
         />
         <h6>{el.name}</h6>

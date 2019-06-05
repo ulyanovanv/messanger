@@ -2,8 +2,9 @@ import React, { Component } from "react"
 
 import ContactSearchLine from "./NewChat/ContactSearchLine.jsx";
 import ContactSuggestion from "./NewChat/ContactSuggestion.jsx";
-import {action} from "mobx/lib/mobx";
+import {inject, observer} from "mobx-react/index";
 
+@inject('store') @observer
 export default class NewChatComponent extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +17,12 @@ export default class NewChatComponent extends Component {
     this.updateListOfSearchedContacts = this.updateListOfSearchedContacts.bind(this);
     this.updateNewChatWithContacts = this.updateNewChatWithContacts.bind(this);
     this.deleteContactFromNewChat = this.deleteContactFromNewChat.bind(this);
+  }
+
+  componentDidMount() {
+    let contacts = this.props.store.contactsList;
+
+    this.setState({listOfSearchedContacts: contacts});
   }
 
   updateListOfSearchedContacts(contacts) {

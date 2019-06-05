@@ -8,7 +8,6 @@ export default class MessangerStore {
   @observable isNewChat = false;
   @observable idOfOpenChat = '';
   @observable searchedContactString = ''; //not possible, shared by ContactSearchLine and ContactSuggestion
-  @observable newChatWithContacts = []; //
 
   // actions
   @action.bound setContactsList(contacts) {
@@ -53,10 +52,7 @@ export default class MessangerStore {
     let idOfChat;
     let contacts = [];
 
-    console.log(contactsForNewChatChat);
-
     if (contactsForNewChatChat.length > 1) {
-      console.log("many");
 
       idOfChat = `${contactsForNewChatChat[0]}_${contactsForNewChatChat[1]}`;
 
@@ -95,6 +91,10 @@ export default class MessangerStore {
     this.toggleChatWindow();
   }
 
+  // @action.bind focusInput(ref) {
+  //   ref.current.focus();
+  // }
+
 
   //computed values
   @computed get openChat() {
@@ -124,5 +124,3 @@ export default class MessangerStore {
     return contacts;
   }
 }
-
-// actions should change state

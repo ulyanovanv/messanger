@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {inject, observer} from "mobx-react/index";
 import PropTypes from "prop-types";
-import {action} from "mobx/lib/mobx";
 
 @inject('store') @observer
 export default class ContactSearchLine extends Component {
