@@ -3,6 +3,7 @@ import {inject, observer} from "mobx-react/index";
 import shortId from "shortid";
 
 import images from "./../../helpers/images.js";
+import PropTypes from "prop-types";
 
 @inject('store') @observer
 export default class ContactSuggestion extends Component {
@@ -13,14 +14,15 @@ export default class ContactSuggestion extends Component {
   }
 
   addContactToSearchLine(name) {
-    this.props.store.addContactToNewChat(name);
+    this.props.updateNewChatWithContacts(name);
+
     this.props.store.setSearchedContact('');
   }
 
   render() {
-    if (!this.props.store.listOfSearchedContacts.length) return null;
+    if (!this.props.listOfSearchedContacts.length) return null;
 
-    let listOfSearchedContacts = this.props.store.listOfSearchedContacts.map(el => {
+    let listOfSearchedContacts = this.props.listOfSearchedContacts.map(el => {
       return <div
           className="App__new-chat_contact-suggetions_each d-flex flex-row align-items-end my-1"
           key={shortId.generate()}
@@ -40,3 +42,7 @@ export default class ContactSuggestion extends Component {
     </div>
   }
 }
+
+ContactSuggestion.propTypes = {
+  updateListOfSearchedContacts: PropTypes.array
+};

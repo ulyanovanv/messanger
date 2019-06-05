@@ -7,10 +7,8 @@ export default class MessangerStore {
   @observable chats = [];
   @observable isNewChat = false;
   @observable idOfOpenChat = '';
-  @observable searchedContactString = ''; //
-  @observable listOfSearchedContacts = [];
+  @observable searchedContactString = ''; //not possible, shared by ContactSearchLine and ContactSuggestion
   @observable newChatWithContacts = []; //
-
 
   // actions
   @action.bound setContactsList(contacts) {
@@ -24,8 +22,6 @@ export default class MessangerStore {
 
   @action.bound toggleChatWindow() {
     this.isNewChat = !this.isNewChat;
-    this.listOfSearchedContacts = [];
-    this.newChatWithContacts = [];
   }
 
   @action.bound setIdOfOpenChat(id) {
@@ -48,47 +44,20 @@ export default class MessangerStore {
     this.chats[chartIndex] = newChartHistory;
   }
 
-  @action.bound setListOfSearchedContacts(contacts) {
-    this.listOfSearchedContacts = contacts;
-  }
-
-  @action.bound setSearchedContact(str) {
+  @action.bound setSearchedContact(str) { //not possible, shared by ContactSearchLine and ContactSuggestion
     this.searchedContactString = str;
-    this.listOfSearchedContacts = [];
   }
 
-  @action.bound addContactToNewChat(name) {
-    if (!this.newChatWithContacts.includes(name)) {
-      this.newChatWithContacts.push(name);
-    }
-  }
-
-  @action.bound shouldNewChatBeStarted() { // not action
-    let chats = this.chats;
-
-    if (this.newChatWithContacts.length === 1) {
-      let searchedName = this.newChatWithContacts[0];
-      for (let i in chats) {
-        let chatContacts = chats[i].contacts;
-
-        for (let j in chatContacts) {
-          if (chatContacts[j].name === searchedName) {
-            return false;
-          }
-        }
-      }
-    }
-
-    return true;
-  }
-
-  @action.bound startNewChat() {
-    let contactsForNewChatChat = this.newChatWithContacts; //
+  @action.bound startNewChat(contactsForNewChatChat) {
     let contactsList = this.contactsList;
     let idOfChat;
     let contacts = [];
 
+    console.log(contactsForNewChatChat);
+
     if (contactsForNewChatChat.length > 1) {
+      console.log("many");
+
       idOfChat = `${contactsForNewChatChat[0]}_${contactsForNewChatChat[1]}`;
 
       contactsForNewChatChat.forEach(name => {
@@ -126,17 +95,6 @@ export default class MessangerStore {
     this.toggleChatWindow();
   }
 
-  @action.bound goToExistingChat() {
-    let idOfChat = this.contactsList.find(el => el.name === this.newChatWithContacts[0]).image;
-
-    this.setIdOfOpenChat(idOfChat);
-    this.toggleChatWindow();
-  }
-
-  @action.bound deleteContactFromNewChat(index) {
-    this.newChatWithContacts.splice(index, 1);
-  }
-
 
   //computed values
   @computed get openChat() {
@@ -165,10 +123,6 @@ export default class MessangerStore {
 
     return contacts;
   }
-
-  // @computed get namesOfContacts() {
-  //   return this.props.store.contactsList.map(obj => obj.name);
-  // }
 }
 
 // actions should change state

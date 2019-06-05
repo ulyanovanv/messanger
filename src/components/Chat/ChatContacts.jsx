@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import PropTypes from 'prop-types';
 
 import images from "./../../helpers/images.js";
 
@@ -20,3 +21,7 @@ export default function ChatContacts(props) {
     {chatContacts}
   </div>);
 }
+
+ChatContacts.propTypes = {
+  contacts: PropTypes.array
+};

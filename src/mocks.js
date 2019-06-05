@@ -250,7 +250,7 @@ let chats = () => {
       ]
     },
     {
-      id: "rozela",
+      id: "rozela_indi",
       contacts: [
         {
           name: "Rozella Tully",

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {inject, observer} from "mobx-react/index";
 import shortid from 'shortid';
+import PropTypes from 'prop-types';
 
 import images from "./../../helpers/images.js";
 
@@ -79,3 +80,7 @@ export default class Chat extends Component {
     </div>
   }
 }
+
+Chat.propTypes = {
+  messages: PropTypes.array
+};
