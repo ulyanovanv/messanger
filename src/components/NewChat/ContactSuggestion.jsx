@@ -44,5 +44,6 @@ export default class ContactSuggestion extends Component {
 }
 
 ContactSuggestion.propTypes = {
-  updateListOfSearchedContacts: PropTypes.array
+  updateListOfSearchedContacts: PropTypes.func,
+  listOfSearchedContacts: PropTypes.array
 };

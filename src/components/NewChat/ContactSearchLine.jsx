@@ -111,5 +111,8 @@ export default class ContactSearchLine extends Component {
 }
 
 ContactSearchLine.propTypes = {
-  updateListOfSearchedContacts: PropTypes.func
+  updateListOfSearchedContacts: PropTypes.func,
+  updateNewChatWithContacts: PropTypes.func,
+  newChatWithContacts: PropTypes.array,
+  deleteContactFromNewChat: PropTypes.func
 };

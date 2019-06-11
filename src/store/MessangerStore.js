@@ -7,7 +7,8 @@ export default class MessangerStore {
   @observable chats = [];
   @observable isNewChat = false;
   @observable idOfOpenChat = '';
-  @observable searchedContactString = ''; //not possible, shared by ContactSearchLine and ContactSuggestion
+  @observable searchedContactString = '';
+
 
   // actions
   @action.bound setContactsList(contacts) {
@@ -90,11 +91,6 @@ export default class MessangerStore {
     this.setIdOfOpenChat(idOfChat);
     this.toggleChatWindow();
   }
-
-  // @action.bind focusInput(ref) {
-  //   ref.current.focus();
-  // }
-
 
   //computed values
   @computed get openChat() {

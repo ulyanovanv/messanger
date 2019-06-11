@@ -1,63 +1,84 @@
-.App__contacts {
+.component-setup, .App__contacts, .App__chats, .App__new-chat {
   border-right: 1px solid #fafafa;
   height: 100vh; }
-  .App__contacts_list {
-    overflow-y: auto;
-    height: inherit; }
-  .App__contacts_item {
-    height: 100px; }
-    .App__contacts_item_contact-image {
-      height: 90px;
-      width: 90px;
-      border-radius: 50%;
-      min-width: 90px; }
-    .App__contacts_item:hover {
-      background-color: #fafafa; }
-    .App__contacts_item_uploaded-image {
-      max-height: 40px;
-      max-width: 40px;
-      border-radius: 5px; }
 
-.App__charts {
-  border-left: 1px solid #fafafa;
-  height: 100vh; }
-  .App__charts_contact img {
-    height: 33px;
-    width: 33px;
-    border-radius: 50%; }
-  .App__charts_message {
-    overflow-y: auto;
-    height: inherit; }
-    .App__charts_message_date {
-      font-size: 10px;
-      font-style: italic; }
-    .App__charts_message_message-width {
-      max-width: 60%; }
-    .App__charts_message_user-image {
-      height: 33px;
-      width: 33px;
-      border-radius: 50%; }
-    .App__charts_message_my-image {
-      height: 33px;
-      width: 33px;
-      min-width: 33px;
-      border-radius: 50%;
-      background-color: lightgrey;
-      font-weight: bold;
-      color: lightslategray;
-      text-align: center;
-      line-height: 32px; }
-    .App__charts_message_loaded-image {
-      max-width: 300px;
-      max-height: 300px; }
-  .App__charts_new-message {
-    height: 60px; }
-    .App__charts_new-message textarea {
-      height: 40px; }
+.overflow-y, .App__contacts_list, .App__chats_message {
+  overflow-y: auto;
+  height: inherit; }
 
-.App__new-chart {
-  border-left: 1px solid #fafafa;
-  height: 100vh; }
+.small-author-image, .App__chats_contact img, .App__chats_message_user-image, .App__chats_message_my-image, .App__new-chat_contact-suggetions img {
+  height: 33px;
+  width: 33px;
+  border-radius: 50%; }
+
+.App__contacts_title {
+  height: 58px; }
+
+.App__contacts_item {
+  height: 100px;
+  cursor: pointer; }
+  .App__contacts_item:hover {
+    background-color: #fafafa; }
+  .App__contacts_item_contact-image {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    min-width: 90px; }
+  .App__contacts_item_contact-image-small {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    min-width: 40px; }
+  .App__contacts_item_image-box {
+    height: 90px;
+    width: 90px;
+    min-width: 90px; }
+  .App__contacts_item_uploaded-image {
+    max-height: 40px;
+    max-width: 40px;
+    border-radius: 5px; }
+
+.App__chats_contact {
+  height: 63px; }
+
+.App__chats_message_date {
+  font-size: 10px;
+  font-style: italic; }
+
+.App__chats_message_message-width {
+  max-width: 60%; }
+
+.App__chats_message_my-image {
+  min-width: 33px;
+  background-color: lightgrey;
+  font-weight: bold;
+  color: lightslategray;
+  text-align: center;
+  line-height: 32px; }
+
+.App__chats_message_loaded-image {
+  max-width: 300px;
+  max-height: 300px; }
+
+.App__chats_new-message.input-group {
+  height: 60px; }
+  .App__chats_new-message.input-group textarea {
+    height: 40px;
+    resize: none; }
+  .App__chats_new-message.input-group input[type="file"] {
+    display: none; }
+
+.App__new-chat_add-chat {
+  height: auto;
+  width: inherit; }
+  .App__new-chat_add-chat input[type="text"] {
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+
+.App__new-chat_contact-suggetions {
+  cursor: pointer; }
+  .App__new-chat_contact-suggetions_each:hover {
+    background-color: #fafafa; }
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
