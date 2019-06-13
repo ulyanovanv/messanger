@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatContacts 1`] = `
+<div
+  className="App__chats_contact d-flex flex-row justify-content-center align-items-end border-bottom py-2"
+>
+  <img
+    className="mx-2"
+    src="test-file-stub"
+    title="ara"
+  />
+  <h6>
+    Ara Targaryen
+  </h6>
+  <img
+    className="mx-2"
+    src="test-file-stub"
+    title="kakadu"
+  />
+  <h6>
+    Kakadu Lannister
+  </h6>
+</div>
+`;

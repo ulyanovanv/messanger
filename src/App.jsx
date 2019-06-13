@@ -5,7 +5,7 @@ import {contacts, chats} from "./mocks.js";
 import ContactsComponent from "./components/ContactsComponent.jsx";
 import ChatComponent from "./components/ChatComponent.jsx";
 import NewChatComponent from "./components/NewChatComponent.jsx";
-import handlePromise from "./helpers/promise.js";
+import {handlePromise, returnData} from "./helpers/promise.js";
 
 @inject('store') @observer
 export default class App extends React.Component {
@@ -17,8 +17,8 @@ export default class App extends React.Component {
     let allContacts = contacts();
     let allChats = chats();
 
-    handlePromise(allContacts, this.props.store.setContactsList);
-    handlePromise(allChats, this.props.store.setChats);
+    returnData(handlePromise(allContacts), this.props.store.setContactsList);
+    returnData( handlePromise(allChats), this.props.store.setChats);
   }
 
   render() {

@@ -1,9 +1,3 @@
-const sum = require('./../helpers/sum');
-
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
-});
-
 test('null', () => {
   const n = null;
   expect(n).toBeNull(); //true
@@ -24,17 +18,4 @@ test('zero', () => {
 
 test('but there is a "stop" in Christoph', () => {
   expect('Christoph').toMatch(/[^0-9]/);
-});
-
-const shoppingList = [
-  'diapers',
-  'kleenex',
-  'trash bags',
-  'paper towels',
-  'beer',
-];
-
-test('the shopping list has beer on it', () => {
-  expect(shoppingList).toContain('beer');
-  expect(new Set(shoppingList)).toContain('beer');
 });

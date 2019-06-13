@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chat 1`] = `
+<div
+  className="App__chats_message d-flex flex-column m-2"
+>
+  <div
+    className="App__chats_message_message-width d-flex flex-row align-content-center mb-1 mr-auto"
+  >
+    <img
+      className="App__chats_message_user-image mr-2"
+      src="test-file-stub"
+      title="ara"
+    />
+    <div
+      className="p-1 rounded bg-light text-dark"
+    >
+      Hello, how do you do?
+       
+       
+      <span
+        className="App__chats_message_date text-secondary align-self-start"
+      >
+        28.04.2019
+      </span>
+      <br />
+    </div>
+  </div>
+  <div
+    className="App__chats_message_message-width d-flex flex-row align-content-center mb-1 ml-auto"
+  >
+    <div
+      className="App__chats_message_my-image mr-2"
+    >
+       me 
+    </div>
+    <div
+      className="p-1 rounded bg-secondary text-white"
+    >
+      Nice to hear you. I am fine. Let's meet today.
+       
+       
+      <span
+        className="App__chats_message_date text-light align-self-end"
+      >
+        28.04.2019
+      </span>
+      <br />
+    </div>
+  </div>
+</div>
+`;

@@ -18,6 +18,12 @@
   "bugs": {
     "url": "https://github.com/ulyanovanv/messanger/issues"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/src/__mocks__/styleMock.js"
+    }
+  },
   "homepage": "https://github.com/ulyanovanv/messanger#readme",
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -37,6 +43,7 @@
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
     "prop-types": "^15.7.2",
+    "react-test-renderer": "^16.8.6",
     "sass-loader": "^7.1.0",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",

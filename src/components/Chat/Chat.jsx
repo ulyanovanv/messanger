@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import {inject, observer} from "mobx-react/index";
 import shortid from 'shortid';
 import PropTypes from 'prop-types';
 
 import images from "./../../helpers/images.js";
 
-@inject('store') @observer
 export default class Chat extends Component {
   constructor(props) {
     super(props);
@@ -26,8 +24,10 @@ export default class Chat extends Component {
   }
 
   scrollDown() {
-    let chartScrollHeight = document.getElementsByClassName("App__chats_message")[0].scrollHeight;
-    this.scrollRed.current.scrollTo(0, chartScrollHeight);
+    if (document.getElementsByClassName("App__chats_message")[0]) {
+      let chartScrollHeight = document.getElementsByClassName("App__chats_message")[0].scrollHeight;
+      this.scrollRed.current.scrollTo(0, chartScrollHeight);
+    }
   }
 
   renderAuthorImage(message, condition) {
