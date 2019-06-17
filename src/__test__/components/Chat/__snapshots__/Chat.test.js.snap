@@ -8,6 +8,7 @@ exports[`Chat 1`] = `
     className="App__chats_message_message-width d-flex flex-row align-content-center mb-1 mr-auto"
   >
     <img
+      alt="ara"
       className="App__chats_message_user-image mr-2"
       src="test-file-stub"
       title="ara"

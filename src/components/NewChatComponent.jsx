@@ -1,17 +1,20 @@
-import React, { Component } from "react"
+import React, { Component } from 'react';
 
-import ContactSearchLine from "./NewChat/ContactSearchLine.jsx";
-import ContactSuggestion from "./NewChat/ContactSuggestion.jsx";
-import {inject, observer} from "mobx-react/index";
+import { inject, observer } from 'mobx-react/index';
+import PropTypes from 'prop-types';
+import ContactSearchLine from './NewChat/ContactSearchLine.jsx';
+import ContactSuggestion from './NewChat/ContactSuggestion.jsx';
 
-@inject('store') @observer
-export default class NewChatComponent extends Component {
+export default
+@inject('store')
+@observer
+class NewChatComponent extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       listOfSearchedContacts: [],
-      newChatWithContacts: []
+      newChatWithContacts: [],
     };
 
     this.updateListOfSearchedContacts = this.updateListOfSearchedContacts.bind(this);
@@ -20,45 +23,55 @@ export default class NewChatComponent extends Component {
   }
 
   componentDidMount() {
-    let contacts = this.props.store.contactsList;
+    const contacts = this.props.store.contactsList;
 
-    this.setState({listOfSearchedContacts: contacts});
+    this.setState({ listOfSearchedContacts: contacts });
   }
 
   updateListOfSearchedContacts(contacts) {
-    this.setState({listOfSearchedContacts: contacts});
+    this.setState({ listOfSearchedContacts: contacts });
   }
 
   updateNewChatWithContacts(name) {
-    if (!this.state.newChatWithContacts.includes(name)) {
-      let newChatWithContacts = this.state.newChatWithContacts.slice();
+    const newChatWithContacts = this.state.newChatWithContacts.slice();
+
+    if (!newChatWithContacts.includes(name)) {
       newChatWithContacts.push(name);
 
-      this.setState({newChatWithContacts: newChatWithContacts});
+      this.setState({ newChatWithContacts });
     }
   }
 
   deleteContactFromNewChat(index) {
-    if (this.state.newChatWithContacts.length) {
-      let newChatWithContacts = this.state.newChatWithContacts.slice();
+    const newChatWithContacts = this.state.newChatWithContacts.slice();
+
+    if (newChatWithContacts.length) {
       newChatWithContacts.splice(index, 1);
 
-      this.setState({newChatWithContacts: newChatWithContacts});
+      this.setState({ newChatWithContacts });
     }
   }
 
   render() {
-    return <div className="App__new-chat col-8 d-flex flex-column p-0">
-      <ContactSearchLine
-        updateListOfSearchedContacts={this.updateListOfSearchedContacts}
-        updateNewChatWithContacts={this.updateNewChatWithContacts}
-        newChatWithContacts={this.state.newChatWithContacts}
-        deleteContactFromNewChat = {this.deleteContactFromNewChat}
-      />
-      <ContactSuggestion
-        listOfSearchedContacts={this.state.listOfSearchedContacts}
-        updateNewChatWithContacts={this.updateNewChatWithContacts}
-      />
-    </div>
+    return (
+      <div className="App__new-chat col-8 d-flex flex-column p-0">
+        <ContactSearchLine
+          updateListOfSearchedContacts={this.updateListOfSearchedContacts}
+          updateNewChatWithContacts={this.updateNewChatWithContacts}
+          newChatWithContacts={this.state.newChatWithContacts}
+          deleteContactFromNewChat={this.deleteContactFromNewChat}
+        />
+        <ContactSuggestion
+          listOfSearchedContacts={this.state.listOfSearchedContacts}
+          updateNewChatWithContacts={this.updateNewChatWithContacts}
+        />
+      </div>
+    );
   }
 }
+
+NewChatComponent.propTypes = {
+  store: PropTypes.shape({
+    contactsList: PropTypes.arrayOf(PropTypes.object),
+  }),
+};

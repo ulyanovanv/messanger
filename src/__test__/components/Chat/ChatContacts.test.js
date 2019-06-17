@@ -1,19 +1,19 @@
 import React from 'react';
-import ChatContacts from './../../../components/Chat/ChatContacts.jsx';
 import renderer from 'react-test-renderer';
+import ChatContacts from '../../../components/Chat/ChatContacts';
 
 test('ChatContacts', () => {
-  let contacts = [
+  const contacts = [
     {
-      name: "Ara Targaryen",
-      image: "ara"
+      name: 'Ara Targaryen',
+      image: 'ara',
     },
     {
-      name: "Kakadu Lannister",
-      image: "kakadu"
-    }
+      name: 'Kakadu Lannister',
+      image: 'kakadu',
+    },
   ];
 
-  let tree = renderer.create(<ChatContacts contacts={contacts}/>).toJSON();
+  const tree = renderer.create(<ChatContacts contacts={contacts} />).toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -1,9 +1,14 @@
-import React, { Component } from "react";
-import {inject, observer} from "mobx-react/index";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import { inject, observer } from 'mobx-react/index';
+import PropTypes from 'prop-types';
+import shortid from 'shortid';
 
-@inject('store') @observer
-export default class ContactSearchLine extends Component {
+import supportEvent from '../../helpers/supportEvent.js';
+
+export default
+@inject('store')
+@observer
+class ContactSearchLine extends Component {
   constructor(props) {
     super(props);
 
@@ -15,47 +20,54 @@ export default class ContactSearchLine extends Component {
   }
 
   findContact(e) {
-    let searchedString = e.target.value;
+    const searchedString = e.target.value;
+    const { setSearchedContact, contactsList } = this.props.store;
 
-    this.props.store.setSearchedContact(searchedString);
+    setSearchedContact(searchedString);
 
-    let foundedContacts = this.props.store.contactsList.filter(el => {
+    const foundedContacts = contactsList.filter((el) => {
       if (el.name.toLowerCase().includes(searchedString) || el.name.toUpperCase().includes(searchedString)) {
         return el.name;
       }
+
+      return false;
     });
 
     this.props.updateListOfSearchedContacts(foundedContacts);
   }
 
   addChosenContactToSearchLine() {
-    let listOfContacts = this.props.newChatWithContacts;
+    const listOfContacts = this.props.newChatWithContacts;
     if (!listOfContacts.length) return null;
 
-    let chosenContacts = listOfContacts.map((el, index) =>
-      <h6
+    const chosenContacts = listOfContacts.map((el, index) => (
+      <div
         className="d-block mr-1"
-        key={el + index}
+        key={shortid.generate()}
         onClick={() => this.props.deleteContactFromNewChat(index)}
+        tabIndex="0"
+        role="button"
+        onKeyDown={event => supportEvent(event, this.props.deleteContactFromNewChat, index)}
       >
+        <h6>
           {el}
-          {(listOfContacts.length && index !== listOfContacts.length - 1) ? ", " : ""}
-      </h6>
-    );
+          {(listOfContacts.length && index !== listOfContacts.length - 1) ? ', ' : ''}
+        </h6>
+      </div>
+    ));
 
     return <div className="d-flex flex-wrap flex-row">{chosenContacts}</div>;
   }
 
   shouldNewChatBeStarted() {
-    let chats = this.props.store.chats;
+    const { chats } = this.props.store;
 
     if (this.props.newChatWithContacts.length === 1) {
-      let searchedName = this.props.newChatWithContacts[0];
+      const searchedName = this.props.newChatWithContacts[0];
+      const arrayOfContacts = chats.map(el => el.contacts);
 
-      for (let i in chats) {
-        let chatContacts = chats[i].contacts;
-
-        if (chatContacts.length === 1 && chatContacts[0].name === searchedName) {
+      for (let i = 0; i < arrayOfContacts.length; i += 1) {
+        if (arrayOfContacts[i].length === 1 && arrayOfContacts[i][0].name === searchedName) {
           return false;
         }
       }
@@ -66,11 +78,11 @@ export default class ContactSearchLine extends Component {
 
   startNewChat() {
     if (!this.props.newChatWithContacts.length) {
-      alert("No contact was chosen. Please, choose at least one to start a conversation.");
+      alert('No contact was chosen. Please, choose at least one to start a conversation.');
       return;
     }
 
-    let shouldNewChatBeStarted = this.shouldNewChatBeStarted();
+    const shouldNewChatBeStarted = this.shouldNewChatBeStarted();
 
     if (shouldNewChatBeStarted) {
       this.props.store.startNewChat(this.props.newChatWithContacts);
@@ -80,10 +92,11 @@ export default class ContactSearchLine extends Component {
   }
 
   goToExistingChat() {
-    let idOfChat = this.props.store.contactsList.find(el => el.name === this.props.newChatWithContacts[0]).image;
+    const { contactsList, setIdOfOpenChat, toggleChatWindow } = this.props.store;
+    const idOfChat = contactsList.find(el => el.name === this.props.newChatWithContacts[0]).image;
 
-    this.props.store.setIdOfOpenChat(idOfChat);
-    this.props.store.toggleChatWindow();
+    setIdOfOpenChat(idOfChat);
+    toggleChatWindow();
   }
 
   render() {
@@ -92,11 +105,11 @@ export default class ContactSearchLine extends Component {
         <h6 className="d-block mx-2"> Chat to: </h6>
         {this.addChosenContactToSearchLine()}
         <input
-          autoFocus={true}
+          autoFocus
           className="btn flex-grow-1 text-black-50 text-left"
           type="text"
           placeholder="Enter the name/names"
-          onChange={(e) => this.findContact(e)}
+          onChange={e => this.findContact(e)}
           value={this.props.store.searchedContactString}
         />
         <button
@@ -106,13 +119,22 @@ export default class ContactSearchLine extends Component {
         >
           start chat
         </button>
-      </div>);
+      </div>
+    );
   }
 }
 
 ContactSearchLine.propTypes = {
+  store: PropTypes.shape({
+    setSearchedContact: PropTypes.func,
+    contactsList: PropTypes.arrayOf(PropTypes.object),
+    chats: PropTypes.arrayOf(PropTypes.object),
+    startNewChat: PropTypes.func,
+    setIdOfOpenChat: PropTypes.func,
+    toggleChatWindow: PropTypes.func,
+    searchedContactString: PropTypes.func,
+  }),
   updateListOfSearchedContacts: PropTypes.func,
-  updateNewChatWithContacts: PropTypes.func,
-  newChatWithContacts: PropTypes.array,
-  deleteContactFromNewChat: PropTypes.func
+  newChatWithContacts: PropTypes.arrayOf(PropTypes.string),
+  deleteContactFromNewChat: PropTypes.func,
 };

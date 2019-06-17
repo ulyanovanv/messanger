@@ -5,6 +5,7 @@ exports[`ChatContacts 1`] = `
   className="App__chats_contact d-flex flex-row justify-content-center align-items-end border-bottom py-2"
 >
   <img
+    alt="ara"
     className="mx-2"
     src="test-file-stub"
     title="ara"
@@ -13,6 +14,7 @@ exports[`ChatContacts 1`] = `
     Ara Targaryen
   </h6>
   <img
+    alt="kakadu"
     className="mx-2"
     src="test-file-stub"
     title="kakadu"

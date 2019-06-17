@@ -1,10 +1,15 @@
-import React, { Component } from "react"
-import {inject, observer } from "mobx-react/index";
-import { observable } from "mobx";
+import React, { Component } from 'react';
+import { inject, observer } from 'mobx-react/index';
+import { observable } from 'mobx';
+import PropTypes from 'prop-types';
+import getBase64 from '../../helpers/imageLoader.js';
 
-@inject('store') @observer
-export default class NewMessage extends Component {
+export default
+@inject('store')
+@observer
+class NewMessage extends Component {
   @observable imageCounter = 0;
+
   @observable message = '';
 
   constructor(props) {
@@ -16,7 +21,7 @@ export default class NewMessage extends Component {
   }
 
   handleKeyDown(e) {
-    let keyCode = e.keyCode || e.which;
+    const keyCode = e.keyCode || e.which;
 
     if (keyCode === 13) {
       e.preventDefault();
@@ -33,15 +38,15 @@ export default class NewMessage extends Component {
 
   uploadImage(e) {
     e.preventDefault();
-    let file = e.target.files[0];
+    const fileUploaded = e.target.files[0];
 
-    if (file.size > 1048576) { //1 Mb
-      alert("The image size should not exceed 1Mb");
+    if (fileUploaded.size > 1048576) { // 1 Mb
+      alert('The image size should not exceed 1Mb');
       return;
     }
 
-    let imageKey = "image_" + this.imageCounter;
-    getBase64(file).then(file => {
+    const imageKey = `image_${this.imageCounter}`;
+    getBase64(fileUploaded).then((file) => {
       localStorage[imageKey] = file;
       this.imageCounter = this.imageCounter + 1;
       this.props.store.addNewMessage(imageKey);
@@ -50,41 +55,40 @@ export default class NewMessage extends Component {
 
   render() {
     return (
-    <div className="input-group p-2 App__chats_new-message">
-      <textarea
-        className="form-control"
-        placeholder="Enter message text"
-        aria-describedby="button-addon4"
-        value={this.message}
-        onChange={(event) => this.message = event.target.value}
-        onKeyDown={(e) => this.handleKeyDown(e)}
-      />
-      <div className="input-group-append" id="button-addon4">
-        <label className="btn btn-outline-secondary btn-file mb-0">
-          Add image
-          <input
-            type="file"
-            value=""
-            accept="image/x-png,image/gif,image/jpeg"
-            onChange={(e) => this.uploadImage(e)}
-          />
-        </label>
-        <input
-          className="btn btn-outline-success"
-          type="button"
-          value="Send message"
-          onClick={() => this.sendMessage()}
+      <div className="input-group p-2 App__chats_new-message">
+        <textarea
+          className="form-control"
+          placeholder="Enter message text"
+          aria-describedby="button-addon4"
+          value={this.message}
+          onChange={(event) => { this.message = event.target.value; }}
+          onKeyDown={e => this.handleKeyDown(e)}
         />
+        <div className="input-group-append" id="button-addon4">
+          <label className="btn btn-outline-secondary btn-file mb-0" htmlFor="fileLoader">
+          Add image
+            <input
+              type="file"
+              id="fileLoader"
+              value=""
+              accept="image/x-png,image/gif,image/jpeg"
+              onChange={e => this.uploadImage(e)}
+            />
+          </label>
+          <input
+            className="btn btn-outline-success"
+            type="button"
+            value="Send message"
+            onClick={() => this.sendMessage()}
+          />
+        </div>
       </div>
-    </div>);
+    );
   }
 }
 
-const getBase64 = (file) => {
-  return new Promise((resolve,reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
-    reader.readAsDataURL(file);
-  });
+NewMessage.propTypes = {
+  store: PropTypes.shape({
+    addNewMessage: PropTypes.func,
+  }),
 };

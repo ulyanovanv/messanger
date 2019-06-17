@@ -1,10 +1,10 @@
 test('null', () => {
   const n = null;
-  expect(n).toBeNull(); //true
-  expect(n).toBeDefined(); //true
-  expect(n).not.toBeUndefined(); //false
-  expect(n).not.toBeTruthy(); //false
-  expect(n).toBeFalsy(); //true
+  expect(n).toBeNull(); // true
+  expect(n).toBeDefined(); // true
+  expect(n).not.toBeUndefined(); // false
+  expect(n).not.toBeTruthy(); // false
+  expect(n).toBeFalsy(); // true
 });
 
 test('zero', () => {
@@ -13,7 +13,7 @@ test('zero', () => {
   expect(z).not.toBeNull();
   expect(z).not.toBeUndefined();
   expect(z).toBeDefined();
-  expect(z).toBeFalsy()
+  expect(z).toBeFalsy();
 });
 
 test('but there is a "stop" in Christoph', () => {
